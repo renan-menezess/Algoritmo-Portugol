@@ -1,47 +1,79 @@
 programa
 {
-
+    inclua biblioteca Tipos --> tp
     funcao inicio()
     {
-    inteiro candidato1=0
-    inteiro candidato2=0
-    inteiro candidato3=0
-    inteiro votoEmBranco=0 
-    inteiro votoNulo=0
-    caracter parar
-        parar='N'
+    inteiro 
+	    votosCodigo,
+	    votosCandidato1=0,
+	    votosCandidato2=0,
+	    votosCandidato3=0,
+	    votosEmBranco=0,
+	    votosNulos=0,
+	    votosTotais=0,
+	    votosTotaisGanhador=0,
+	    encerrarVotacao=123456
 
-    inteiro votos
+	cadeia
+		nomeCandidato1 = "Belleti",
+		nomeCandidato2 = "Anitta",
+		nomeCandidato3 = "Manuel Gomi",
+		nomeDoGanhador = ""
+
+    caracter parar
+    parar='N'
+
+    logico
+    		opcaoInvalida = falso
+
     faca{
-        limpa()
-        escreva("Digite o seu voto: Celso [1] Gabriel [2] Rafael [3] VotoEmBranco[9], VotoNulo[8]: ")
-        leia(votos)
-        escolha(votos)
+    			limpa()
+    			se (opcaoInvalida) {
+    				escreva("Opção Invalida! ")
+
+    }
+			escreva(" Opções de Votos: \n\n")
+			escreva("|-*| 1 |*-| ", nomeCandidato1, "\n")
+			escreva("|-*| 2 |*-| ", nomeCandidato2, "\n")
+			escreva("|-*| 3 |*-| ", nomeCandidato3, "\n")
+			escreva("|-*| 9 |*-| Voto em branco \n")
+			escreva("|-*| 8 |*-| Voto nulo \n")
+			escreva("|-*| 0 |*-| Encerrar a votação \n\n")
+	
+			escreva("Digite agora o código do seu voto: ")
+			leia(votosCodigo)
+			
+        escolha(votosCodigo)
             {
+            caso 0:
+            escreva("Digite o PIN para encerrar votação")
+            leia(parar)
+            pare
+            
             caso 1:
-            escreva("Você votou no Celso! ")
-            candidato1++
-            pare 
+            votosCandidato1++
+            votosTotais++
+            pare
 
             caso 2:
-            escreva("Você votou no Gabriel! "+votos)
-            candidato2++
-            pare 
+            votosCandidato2++
+            votosTotais++
+            pare
 
             caso 3:
-            escreva("você votou no Rafael!  "+votos)
-            candidato3++
+            votosCandidato3++
+            votosTotais++
             pare 
 
             caso 9:
-            escreva("Você voltou em branco "+votos)
-            votoEmBranco++
-            pare 
+            votosEmBranco++
+            votosTotais++
+            pare
 
             caso 8:
-            escreva("Você voltou nulo "+votos)
-            votoNulo++
-            pare 
+            votosNulos++
+            votosTotais++
+            pare
 
             }
             limpa()
@@ -57,9 +89,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 281; 
+ * @POSICAO-CURSOR = 1601; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {candidato1, 6, 12, 10}-{candidato2, 7, 12, 10}-{candidato3, 8, 12, 10}-{votoEmBranco, 9, 12, 12}-{votoNulo, 10, 12, 8}-{parar, 11, 13, 5}-{votos, 14, 12, 5};
+ * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
