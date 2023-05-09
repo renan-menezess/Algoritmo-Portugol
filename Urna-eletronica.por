@@ -1,7 +1,7 @@
 programa
 {
     inclua biblioteca Tipos --> tp
-    inclua biblioteca Matematica
+    inclua biblioteca Sons
     funcao inicio()
     {
     inteiro 
@@ -119,7 +119,7 @@ programa
 		}
 
 		limpa()
-		escreva("** Resultado da apuração desta urna\n\n")
+		escreva("==: Resultado da Votação\n\n")
 		
 		se (votosTotais != 0) {
 			
@@ -144,18 +144,18 @@ programa
 				
 		} senao {
 			
-			escreva("** Nenhum voto registrado\n")
+			escreva("==: Nenhum voto registrado\n")
 			
 		}
 
 		
 		se (nao empate) {
-			escreva("** Ganhador da Votação\n\n")
+			escreva("==: Ganhador da Votação\n\n")
 			escreva(nomeDoGanhador, " com ", votosTotaisGanhador, " votos (", 
 				percentualGanhador, "%) somados os votos em branco\n")
 		} senao {
-			escreva("** Não foi possível determinar um ganhador desta votação\n\n")
-		}
+			escreva("==: Não foi possível determinar um ganhador desta votação\n\n")
+		}	
 
     }
 }
@@ -164,7 +164,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 637; 
+ * @POSICAO-CURSOR = 4209; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = {votosCodigo, 8, 5, 11}-{votosCandidato1, 9, 5, 15}-{votosCandidato2, 10, 5, 15}-{votosCandidato3, 11, 5, 15}-{votosEmBranco, 12, 5, 13}-{votosNulos, 13, 5, 10}-{votosTotais, 14, 5, 11}-{votosTotaisGanhador, 15, 5, 19};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
