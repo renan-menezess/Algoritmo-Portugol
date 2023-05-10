@@ -2,6 +2,8 @@ programa
 {
     inclua biblioteca Tipos --> tp
     inclua biblioteca Sons
+    inclua biblioteca Util
+    inclua biblioteca Calendario
     funcao inicio()
     {
     inteiro 
@@ -28,7 +30,10 @@ programa
 		nomeCandidato1 = "Dilera",
 		nomeCandidato2 = "Alek",
 		nomeCandidato3 = "Manel Gomi",
-		nomeDoGanhador = ""
+		nomeDoGanhador = "",
+		inicioUrna = "",
+		encerramentoUrna = ""
+		
 		
     	caracter parar
     	parar='N'
@@ -61,26 +66,31 @@ programa
             {
             
             caso 1:
+            somConfirmacao()
             votosCandidato1++
             votosTotais++
             pare
 
             caso 2:
+            somConfirmacao()
             votosCandidato2++
             votosTotais++
             pare
 
             caso 3:
+            somConfirmacao()
             votosCandidato3++
             votosTotais++
             pare 
 
             caso 9:
+            somConfirmacao()
             votosEmBranco++
             votosTotais++
             pare
 
             caso 8:
+            somConfirmacao()
             votosNulos++
             votosTotais++
             pare
@@ -151,12 +161,42 @@ programa
 		
 		se (nao empate) {
 			escreva("==: Ganhador da Votação\n\n")
+			
 			escreva(nomeDoGanhador, " com ", votosTotaisGanhador, " votos (", 
 				percentualGanhador, "%) somados os votos em branco\n")
 		} senao {
 			escreva("==: Não foi possível determinar um ganhador desta votação\n\n")
-		}	
+		}
+    }
 
+    funcao somConfirmacao()
+    {
+	    	inteiro somUrna = Sons.carregar_som("Audio/desafios-urna-eletronica_audio_confirma-urna.mp3")
+	
+	    	Sons.reproduzir_som(somUrna, falso)
+	    	Util.aguarde(2000)
+    }
+
+    //funcao boletimUrna( horarioApuracao, minutoAtual, segundoAtual, diaMesApuracao, mesApuracao, anoApuracao)
+    //{
+	    
+	    //inteiro anoApuracao = Calendario.ano_atual() 
+	    //inteiro diaMesApuracao = Calendario.dia_mes_atual()
+	    //inteiro horarioApuracao = Calendario.hora_atual(falso)
+	   // inteiro minutoAtual = Calendario.minuto_atual()
+	   // inteiro segundoAtual = Calendario.segundo_atual()
+	   // inteiro mesApuracao = Calendario.mes_atual()
+	    //escreva("Horário de Início: " , horarioApuracao, ":", minutoAtual, ":", segundoAtual, "\n", diaMesApuracao, "-", mesApuracao, "-", anoApuracao, "\n")
+	    //escreva("Horário de encerramento: " , horarioApuracao, ":", minutoAtual, ":", segundoAtual, "\n", diaMesApuracao, "-", mesApuracao, "-", anoApuracao, "\n")
+	    
+    //}
+    
+    funcao boletimUrna(inteiro anoApuracao, inteiro diaMesApuracao, inteiro horarioApuracao, inteiro minutoAtual, inteiro segundoAtual, inteiro mesApuracao)
+    {
+	    
+	    retorne 
+	    
+	    
     }
 }
 /* $$$ Portugol Studio $$$ 
@@ -164,9 +204,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 4209; 
+ * @POSICAO-CURSOR = 5680; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {votosCodigo, 8, 5, 11}-{votosCandidato1, 9, 5, 15}-{votosCandidato2, 10, 5, 15}-{votosCandidato3, 11, 5, 15}-{votosEmBranco, 12, 5, 13}-{votosNulos, 13, 5, 10}-{votosTotais, 14, 5, 11}-{votosTotaisGanhador, 15, 5, 19};
+ * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
